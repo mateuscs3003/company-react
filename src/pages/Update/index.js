@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import './style.css';
 
 function Update() {
     const { cnpj } = useParams();
@@ -62,18 +63,21 @@ function Update() {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label>Nome da empresa: </label> <input type="text" name="nome_empresa" value={data.nome_empresa} onChange={handleChange} />
-                <label>Nome do cliente:</label> <input type="text" name="nome_cliente" value={data.nome_cliente} onChange={handleChange} /><br />
-                <label>Senha:</label> <input type="password" name="senha" value={data.senha} onChange={handleChange} /><br />
-                <label>CEP:</label> <input type="number" name="cep" value={data.cep} onChange={handleChange} /><br />
-                <label>Endereço:</label> <input type="text" name="endereco" value={data.endereco} onChange={handleChange} /><br />
-                <label>Número:</label> <input type="number" name="numero" value={data.numero} onChange={handleChange} /><br />
-                <label>Telefone:</label> <input mask="(99)99999-9999" type="tel" name="telefone" value={data.telefone} onChange={handleChange} /><br />
-                <label>E-mail:</label> <input type="text" name="email" value={data.email} onChange={handleChange} /><br />
-                <button type="submit">Atualizar</button>
-            </form>
+        <div className="containerUpdate">
+            <div className="cardUpdate">
+                <h2>Atualize os dados</h2>
+                <form class="updateForm" onSubmit={handleSubmit}>
+                    <div><label>Nome da empresa: </label> <input type="text" name="nome_empresa" value={data.nome_empresa} onChange={handleChange} /> </div>
+                    <div><label>Nome do cliente:</label> <input type="text" name="nome_cliente" value={data.nome_cliente} onChange={handleChange} /> </div>
+                    <div><label>Senha:</label> <input type="password" name="senha" value={data.senha} onChange={handleChange} /> </div>
+                    <div><label>CEP:</label> <input type="number" name="cep" value={data.cep} onChange={handleChange} /> </div>
+                    <div><label>Endereço:</label> <input type="text" name="endereco" value={data.endereco} onChange={handleChange} /> </div>
+                    <div><label>Número:</label> <input type="number" name="numero" value={data.numero} onChange={handleChange} /> </div>
+                    <div><label>Telefone:</label> <input mask="(99)99999-9999" type="tel" name="telefone" value={data.telefone} onChange={handleChange} /> </div>
+                    <div><label>E-mail:</label> <input type="text" name="email" value={data.email} onChange={handleChange} /> </div>
+                    <div className="updateButton"><button type="submit">Atualizar</button> </div>
+                </form>
+            </div>
         </div>
     )
 }

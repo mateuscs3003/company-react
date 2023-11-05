@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import './style.css';
 
 function Individual() {
 
@@ -29,25 +30,27 @@ function Individual() {
             axios.delete(url);
             alert("Cadastro excluído com sucesso!");
             window.location.replace("http://localhost:3000/");
-        } catch(error) {
+        } catch (error) {
             alert("Algo deu errado... =(");
             console.log(error);
         }
     }
 
     return (
-        <div>
+        <div className="individualContainer">
             {data.map((item) => (
-                <div key={item.cnpj} className="table-row">
-                    <span>CNPJ:</span> <span>{item.cnpj}</span>
-                    <span>Nome da empresa:</span> <span>{item.nome_empresa}</span>
-                    <span>Nome do cliente:</span> <span>{item.nome_cliente}</span>
-                    <span>CEP:</span> <span>{item.cep}</span>
-                    <span>Endereço:</span> <span>{`${item.endereco}, ${item.numero}`}</span>
-                    <span>Telefone:</span> <span>{item.telefone}</span>
-                    <span>E-mail:</span> <span>{item.email}</span>
-                    <button onClick={deleteButton}>Deletar empresa</button>
-                    <a href={`http://localhost:3000/${item.cnpj}/update`}><button>Atualizar</button></a>
+                <div key={item.cnpj} className="individualData">
+                    <span><b>CNPJ:</b> {item.cnpj}</span>
+                    <span><b>Nome da empresa:</b> {item.nome_empresa}</span>
+                    <span><b>Nome do cliente:</b> {item.nome_cliente}</span>
+                    <span><b>CEP:</b> {item.cep}</span>
+                    <span><b>Endereço:</b> {`${item.endereco}, ${item.numero}`}</span>
+                    <span><b>Telefone:</b> {item.telefone}</span>
+                    <span><b>E-mail:</b> {item.email}</span>
+                    <div className="individualButtons">
+                        <button onClick={deleteButton}>Deletar empresa</button>
+                        <a href={`http://localhost:3000/${item.cnpj}/update`}><button>Atualizar</button></a>
+                    </div>
                 </div>
             ))}
         </div>

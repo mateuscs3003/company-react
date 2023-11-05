@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import './style.css';
 
 function Home() {
 
@@ -30,26 +31,28 @@ function Home() {
     }
 
     return (
-        <div>
-            <div>
-                <a href="http://localhost:3000/new"><button>Cadastrar nova empresa</button></a> <br />
-                <input type="text" onChange={(e) => handleChange(e.target.value)}></input>
-                <button onClick={handleActivate}>Pesquisar</button>
+        <div className="container">
+            <div className="actions">
+                <a href="http://localhost:3000/new"><button>Cadastrar nova empresa</button></a>
+                <div className="search">
+                    <input type="text" onChange={(e) => handleChange(e.target.value)}></input>
+                    <button onClick={handleActivate}>Pesquisar</button>
+                </div>
             </div>
             {data.map((item) => (
-                activate === false || item.cnpj === search && activate === true ?  
-                <div key={item.cnpj} className="table-row">
-                    <span>CNPJ:</span> <span>{item.cnpj}</span>
-                    <span>Nome da empresa:</span> <span>{item.nome_empresa}</span>
-                    <span>Nome do cliente:</span> <span>{item.nome_cliente}</span>
-                    <span>CEP:</span> <span>{item.cep}</span>
-                    <span>Endereço:</span> <span>{`${item.endereco}, ${item.numero}`}</span>
-                    <span>Telefone:</span> <span>{item.telefone}</span>
-                    <span>E-mail:</span> <span>{item.email}</span>
-                    <a href={`http://localhost:3000/company/${item.cnpj}`}><button>Visualizar individual</button></a>
-                </div> 
-                : 
-                ""
+                activate === false || item.cnpj === search && activate === true ?
+                    <div key={item.cnpj} className="data">
+                        <span><b>CNPJ:</b> {item.cnpj}</span>
+                        <span><b>Nome da empresa:</b> {item.nome_empresa}</span>
+                        <span><b>Nome do cliente:</b> {item.nome_cliente}</span>
+                        <span><b>CEP:</b> {item.cep}</span>
+                        <span><b>Endereço:</b> {`${item.endereco}, ${item.numero}`}</span>
+                        <span><b>Telefone:</b> {item.telefone}</span>
+                        <span><b>E-mail:</b> {item.email}</span>
+                        <a href={`http://localhost:3000/company/${item.cnpj}`}><button>Visualizar individual</button></a>
+                    </div>
+                    :
+                    ""
             ))}
         </div>
 

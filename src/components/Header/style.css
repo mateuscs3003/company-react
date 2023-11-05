@@ -1,0 +1,17 @@
+.header {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+}
+
+.linkar {
+    text-decoration: none;
+    color: white;
+}
+
+.linkar:hover {
+    opacity: 0.5;
+}

@@ -1,0 +1,31 @@
+.containerUpdate {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 5px;
+    height: 525px;
+    padding: 50px;
+}
+
+.cardUpdate {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+}
+
+.updateForm {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    gap: 5px;
+}
+
+.updateButton {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
