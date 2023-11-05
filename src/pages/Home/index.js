@@ -35,7 +35,7 @@ function Home() {
             <div className="actions">
                 <a href="http://localhost:3000/new"><button>Cadastrar nova empresa</button></a>
                 <div className="search">
-                    <input type="text" onChange={(e) => handleChange(e.target.value)}></input>
+                    <input type="text" onChange={(e) => handleChange(e.target.value)} placeholder='Digite o CNPJ completo'></input>
                     <button onClick={handleActivate}>Pesquisar</button>
                 </div>
             </div>

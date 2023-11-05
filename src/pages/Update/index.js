@@ -66,15 +66,16 @@ function Update() {
         <div className="containerUpdate">
             <div className="cardUpdate">
                 <h2>Atualize os dados</h2>
+                <span>Digite somente os dados que quer atualizar!</span>
                 <form class="updateForm" onSubmit={handleSubmit}>
-                    <div><label>Nome da empresa: </label> <input type="text" name="nome_empresa" value={data.nome_empresa} onChange={handleChange} /> </div>
-                    <div><label>Nome do cliente:</label> <input type="text" name="nome_cliente" value={data.nome_cliente} onChange={handleChange} /> </div>
-                    <div><label>Senha:</label> <input type="password" name="senha" value={data.senha} onChange={handleChange} /> </div>
-                    <div><label>CEP:</label> <input type="number" name="cep" value={data.cep} onChange={handleChange} /> </div>
-                    <div><label>Endereço:</label> <input type="text" name="endereco" value={data.endereco} onChange={handleChange} /> </div>
-                    <div><label>Número:</label> <input type="number" name="numero" value={data.numero} onChange={handleChange} /> </div>
-                    <div><label>Telefone:</label> <input mask="(99)99999-9999" type="tel" name="telefone" value={data.telefone} onChange={handleChange} /> </div>
-                    <div><label>E-mail:</label> <input type="text" name="email" value={data.email} onChange={handleChange} /> </div>
+                    <div><label>Nome da empresa: </label> <input type="text" name="nome_empresa" value={data.nome_empresa} onChange={handleChange} placeholder='Digite o nome da empresa'/> </div>
+                    <div><label>Nome do cliente:</label> <input type="text" name="nome_cliente" value={data.nome_cliente} onChange={handleChange} placeholder='Digite o nome do  cliente'/> </div>
+                    <div><label>Senha:</label> <input type="password" name="senha" value={data.senha} onChange={handleChange} placeholder='Digite sua senha'/> </div>
+                    <div><label>CEP:</label> <input type="number" name="cep" value={data.cep} onChange={handleChange} placeholder='Digite o CEP sem o hífen'/> </div>
+                    <div><label>Endereço:</label> <input type="text" name="endereco" value={data.endereco} onChange={handleChange} placeholder='Digite o endereço'/> </div>
+                    <div><label>Número:</label> <input type="number" name="numero" value={data.numero} onChange={handleChange} placeholder='Digite o número'/> </div>
+                    <div><label>Telefone:</label> <input mask="(99)99999-9999" type="tel" name="telefone" value={data.telefone} onChange={handleChange} placeholder='Digite o número sem espaço ou dígito'/> </div>
+                    <div><label>E-mail:</label> <input type="text" name="email" value={data.email} onChange={handleChange} placeholder='seuemail@email.com'/> </div>
                     <div className="updateButton"><button type="submit">Atualizar</button> </div>
                 </form>
             </div>
